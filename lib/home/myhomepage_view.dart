@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getxdemo/constant/app_colors.dart';
+import 'package:getxdemo/constant/app_fonts.dart';
 import 'package:getxdemo/home/myhomepage_controller.dart';
 
 class MyHomePageView extends GetView<MyHomePageController> {
@@ -7,19 +9,20 @@ class MyHomePageView extends GetView<MyHomePageController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center( 
-        child: Column( 
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            const Text ( 'You have Incremented counter value to :'),
-            Obx(() => Text(
-                  '${controller.count.value}',
-                  style: Theme.of(context).textTheme.headline4,
-                )),
-          ],
-        ),
-
+    return SafeArea(
+      child: Scaffold(
+        body: Obx(() => ListView.builder(
+            itemBuilder: (BuildContext context, int index) {
+              return Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(color: colorThemeBg, borderRadius: BorderRadius.circular(10)),
+                child: Text(
+                  '${controller.homeDataResponse.value[index].title}',
+                  style: FontConstant.lufgaRegular.copyWith(color: colorTheme, fontSize: 18),
+                ),
+              ).marginAll(8);
+            },
+            itemCount: controller.homeDataResponse.value.length)),
       ),
     );
   }
