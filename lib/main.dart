@@ -3,9 +3,8 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getxdemo/constant/app_string.dart';
-import 'package:getxdemo/home/myhomepage_binding.dart';
+import 'package:getxdemo/pages/splash/splash_binding.dart';
 import 'package:getxdemo/routes/apppages.dart';
-import 'package:getxdemo/splash/splash_binding.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,8 +18,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       initialBinding: SplashBinding(),
-      initialRoute: AppPages.SPLASH,
-      getPages: AppPages.routes,
+      initialRoute: Routes.splash,
+      getPages: Routes.routes,
       enableLog: true,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(

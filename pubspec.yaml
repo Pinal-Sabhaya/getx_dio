@@ -39,6 +39,10 @@ dependencies:
   awesome_top_snackbar: ^0.0.3
   get:
   connectivity_plus:
+  dio: ^5.3.0
+  logger: ^1.4.0
+  shared_preferences: ^2.2.0
+  flutter_easyloading: ^3.0.5
 
 dev_dependencies:
   flutter_test:
