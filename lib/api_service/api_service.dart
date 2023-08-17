@@ -11,7 +11,8 @@ import 'package:awesome_top_snackbar/awesome_top_snackbar.dart';
 
 abstract class ApiService {
   static const commonHeader = {
-    'Authorization': ''
+    'username': 'kminchelle',
+    'password': '0lelplR',
     // 'Authorization': 'Basic YWRtaW46bXVzRCB3aDE2IDdGTTEgdjgxcSBtbzZJIEUxV2c='
   };
 
@@ -19,7 +20,7 @@ abstract class ApiService {
     print("ApiService GET Api: ${endPoint}");
     print("ApiService Api Header: $commonHeader");
 
-    var response = await http.get(Uri.parse(endPoint), headers: commonHeader);
+    var response = await http.get(Uri.parse(ApiConstant.baseUrl + endPoint), headers: commonHeader);
     // await http.get(Uri.parse(BASE_URL + endPoint), headers: commonHeader);
 
     print("ApiService GET Response Code : ${response.statusCode}");
