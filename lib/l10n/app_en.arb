@@ -1,0 +1,9 @@
+{
+ "app_name": "Getx Dio",
+ "welcome_back": "Welcome Back",
+ "welcome_back_content": "Let's get started by filling out the form below.",
+ "lbl_email": "Email",
+ "lbl_password": "Password",
+ "lbl_sign_in": "Sign In"
+
+}

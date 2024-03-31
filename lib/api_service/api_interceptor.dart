@@ -25,7 +25,23 @@ class ApiInterceptors extends InterceptorsWrapper {
       options.headers['Authorization'] = "Bearer $token";
     }
 
-    options.headers[ApiConstant.xApiKey] = ApiConstant.xApiValue;
+  /*  options.headers[ApiConstant.xApiKey] = ApiConstant.xApiValue;
+    options.headers['Accept'] = 'application/json';
+    if (method == 'GET') {
+      logger
+          .e("✈️ REQUEST[$method] => PATH: $uri \n Token: ${options.headers}");
+    } else {
+      try {
+        logger.e(
+            "✈️ REQUEST[$method] => PATH: $uri \n Token:${options.headers} \n DATA: ${jsonEncode(data)}");
+      } catch (e) {
+        logger.e(
+            "✈️ REQUEST[$method] => PATH: $uri \n Token: ${options.headers} \n DATA: ${data.files.toString()}");
+      }
+    }
+    super.onRequest(options, handler);*/
+
+    options.headers['KEY'] = ApiConstant.value;
     options.headers['Accept'] = 'application/json';
     if (method == 'GET') {
       logger
@@ -74,16 +90,6 @@ class ApiInterceptors extends InterceptorsWrapper {
     if (EasyLoading.isShow) {
       EasyLoading.dismiss();
     }
-    // if (err.type == DioErrorType.sendTimeout || err.type == DioErrorType.connectTimeout || err.type == DioErrorType.receiveTimeout) {
-    //   const SnackBar(content: Text("No Internet Available!"));
-    // } else if (err.type == DioErrorType.response) {
-    //   if (err.response?.statusCode == 401 || err.response?.statusCode == 403) {
-    //   } else {
-    //     SnackBar(content: Text(err.response?.statusMessage ?? ""));
-    //   }
-    // } else {
-    //   SnackBar(content: Text(err.response?.statusMessage ?? ""));
-    // }
 
     try {
       data = jsonEncode(err.response!.data);

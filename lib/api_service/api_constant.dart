@@ -7,4 +7,9 @@ abstract class ApiConstant {
 
   static const xApiKey = "x-api-key";
   static const xApiValue = "";
+  static const key = "KEY";
+  static const value = "";
+
+  static const paramPassword = "password";
+  static const paramUsername = "username";
 }

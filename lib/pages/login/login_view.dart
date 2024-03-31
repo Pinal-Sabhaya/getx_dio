@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getxdemo/constant/app_fonts.dart';
 import 'package:getxdemo/pages/login/login_controller.dart';
+import 'package:getxdemo/utils/common_utils.dart';
 
 class LoginView extends GetView<LoginController> {
   @override
@@ -21,14 +22,14 @@ class LoginView extends GetView<LoginController> {
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Welcome Back',
+                       Text(
+                        translation(context).welcome_back,
                         style: FontConstant.lufgaRegular,
                       ),
-                      const Padding(
+                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 24),
                         child: Text(
-                          'Let\'s get started by filling out the form below.',
+                          translation(context).welcome_back_content,
                           style: FontConstant.lufgaRegular,
                         ),
                       ),
@@ -38,7 +39,7 @@ class LoginView extends GetView<LoginController> {
                           controller: controller.emailController.value,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: 'Email',
+                            labelText: translation(context).lbl_email,
                             hintStyle: FontConstant.lufgaRegular,
                             enabledBorder: OutlineInputBorder(
                               borderSide: const BorderSide(
@@ -79,7 +80,7 @@ class LoginView extends GetView<LoginController> {
                           controller: controller.passwordController.value,
                           obscureText: !controller.passwordVisibility.value,
                           decoration: InputDecoration(
-                            labelText: 'Password',
+                            labelText: translation(context).lbl_password,
                             hintStyle: FontConstant.lufgaLight,
                             enabledBorder: OutlineInputBorder(
                               borderSide: const BorderSide(
@@ -131,7 +132,7 @@ class LoginView extends GetView<LoginController> {
                           controller.loginApi();
                         },
                         color: Colors.cyan,
-                        child: const Text("Sign In"),
+                        child: Text(translation(context).lbl_sign_in),
                         height: 50.0,
                       ),
                     ],
